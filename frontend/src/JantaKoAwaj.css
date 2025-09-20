@@ -1,0 +1,250 @@
+/* Reset and base styles */
+html, body {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background: linear-gradient(120deg, #8f2cff 0%, #4a00e0 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f7f0fa;
+}
+
+/* Main app container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px; /* leave space for fixed header */
+}
+
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px; /* height of header */
+  background: rgba(70, 0, 128, 0.9);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  border-radius: 0 0 25px 25px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Logout button inside header */
+header button {
+  background-color: #551a8b;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+}
+
+header button:hover {
+  background-color: #7a3ea0;
+}
+
+/* The container for concerns and form */
+.janta-container {
+  margin: 0 auto 2rem auto;
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  box-shadow: 0 6px 48px rgba(144, 40, 240, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow-y: visible;
+}
+
+/* Top concerns box */
+.janta-top-concerns {
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.5em 2em;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #eee;
+}
+
+.janta-container h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* Submit concern form */
+.janta-idea-form {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2.5em;
+}
+
+.janta-idea-form textarea {
+  flex: 1;
+  min-height: 60px;
+  border-radius: 15px;
+  border: none;
+  padding: 0.75em 1em;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  box-shadow: inset 2px 2px 8px rgba(0,0,0,0.2);
+  resize: vertical;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.janta-idea-form textarea::placeholder {
+  color: #ddd;
+  font-style: italic;
+}
+
+.janta-idea-form textarea:hover,
+.janta-idea-form textarea:focus {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 3px 3px 12px rgba(0,0,0,0.3);
+}
+
+.janta-idea-form button {
+  padding: 0.65em 2em;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #9b59b6, #8e44ad);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(155, 89, 182, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.janta-idea-form button:hover {
+  background: linear-gradient(45deg, #8e44ad, #6f2a9b);
+  box-shadow: 0 8px 22px rgba(142, 68, 173, 0.9);
+}
+
+/* Idea list */
+.janta-ideas-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.janta-ideas-list li {
+  background: rgba(255,255,255,0.15);
+  border-radius: 15px;
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 8px 24px rgba(106, 13, 173, 0.25);
+  font-size: 1.1rem;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.janta-ideas-list p {
+  margin: 0 0 1em 0;
+  font-weight: 600;
+}
+
+/* Voting buttons */
+.janta-ideas-list button {
+  margin-right: 1em;
+  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  width: fit-content;
+}
+
+.janta-ideas-list button.upvote-btn {
+  background: linear-gradient(45deg, #1abc9c, #16a085);
+}
+
+.janta-ideas-list button.upvote-btn:hover {
+  background: linear-gradient(45deg, #16a085, #148f77);
+}
+
+.janta-ideas-list button.downvote-btn {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+}
+
+.janta-ideas-list button.downvote-btn:hover {
+  background: linear-gradient(45deg, #c0392b, #962d22);
+}
+
+/* Voted button styles */
+.janta-ideas-list button.voted {
+  opacity: 0.7;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.janta-ideas-list button.voted:disabled {
+  background: #666 !important;
+  color: #ccc;
+}
+
+.janta-ideas-list button.upvote-btn.voted {
+  background: linear-gradient(45deg, #27ae60, #2ecc71) !important;
+  color: white;
+  font-weight: bold;
+}
+
+.janta-ideas-list button.downvote-btn.voted {
+  background: linear-gradient(45deg, #8e44ad, #9b59b6) !important;
+  color: white;
+  font-weight: bold;
+}
+
+.janta-ideas-list button:hover {
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .app-container {
+    padding-top: 60px;
+  }
+
+  header {
+    height: 60px;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .janta-container {
+    padding: 1.5rem 2rem;
+  }
+
+  .janta-idea-form button {
+    width: 100%;
+  }
+
+  .janta-ideas-list li {
+    font-size: 1rem;
+  }
+}
